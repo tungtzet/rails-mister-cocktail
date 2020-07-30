@@ -1,0 +1,20 @@
+<h1><%= @cocktail.name %></h1>
+
+<h2>All Doses</h2>
+<ul>
+<% @doses.each do |dose| %>
+  <li>
+  <%= dose.ingredient.name %>: 
+  <%= dose.description %>
+  <%= link_to "x", dose, method: :delete, data: { confirm: 'Are you sure?' }  %>
+  </li>
+<% end %>
+</ul>
+
+<h2>Create a new dose</h2>
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :description %>
+  <%= f.input :ingredient_id, as: :select, collection: @ingredients %>
+  <%= f.submit %>
+  <%# raise %>
+<% end %>
