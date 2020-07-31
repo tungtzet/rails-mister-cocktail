@@ -1,20 +1,29 @@
-<h1><%= @cocktail.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image %>);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
 
-<h2>All Doses</h2>
-<ul>
-<% @doses.each do |dose| %>
-  <li>
-  <%= dose.ingredient.name %>: 
-  <%= dose.description %>
-  <%= link_to "x", dose, method: :delete, data: { confirm: 'Are you sure?' }  %>
-  </li>
-<% end %>
-</ul>
+<div class="container mt-5">
+<div class="ingredients">
+  <h3>Ingredients</h3>
+    <ul>
+    <% @doses.each do |dose| %>
+      <li>
+      <%= dose.ingredient.name %>: 
+      <%= dose.description %>
+      <%= link_to "x", dose, method: :delete, data: { confirm: 'Are you sure?' }  %>
+      </li>
+    <% end %>
+    </ul>
+</div>
+  
 
-<h2>Create a new dose</h2>
-<%= simple_form_for([@cocktail, @dose]) do |f| %>
-  <%= f.input :description %>
-  <%= f.input :ingredient_id, as: :select, collection: @ingredients %>
-  <%= f.submit %>
-  <%# raise %>
-<% end %>
+  <h3>Add an ingredient</h3>
+  <%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.input :ingredient_id, as: :select, collection: @ingredients %>
+    <%= f.input :description %>
+    <%= f.submit %>
+    <%# raise %>
+  <% end %>
+</div>
