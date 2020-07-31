@@ -14,5 +14,16 @@
   a {
     color: white;
     text-decoration: none !important;
+    transition: 0.5s;
+    &:hover {
+      letter-spacing: 3px;
+      transition: 0.5s;
+    }
+  }
+  #add-new {
+    color: $bordeaux;
+    &:hover {
+      color: white;
+    }
   }
 }

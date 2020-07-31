@@ -13,4 +13,10 @@
 
 .navbar-brand {
   flex-grow: 1;
+  &:hover {
+    .fa-cocktail {
+    transform: rotate(30deg);
+    transition: 0.3s;
+    }
+  }
 }
