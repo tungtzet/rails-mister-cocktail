@@ -1,24 +1,4 @@
-# README
+# Silly Cocktail
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Silly Cocktail](https://tung-cocktail.herokuapp.com/)
+is just a simple and silly web app for me to learn and play around with Ruby on Rails, MVC Pattern
